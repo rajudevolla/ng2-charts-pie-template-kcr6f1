@@ -69,7 +69,7 @@ export class AppComponent {
   ];
   public barChartLegend = false;
   public barChartPlugins = [];
-  public barchartColors2: Array<any> = [
+  public barchartColors1: Array<any> = [
     {
       backgroundColor: ["red", "blue", "green", "yellow", "pink"],
       hoverBackgroundColor: ["#92c0fc", "#fff68a", "#cbffa8", "#a6fffe"],
@@ -91,6 +91,51 @@ export class AppComponent {
           ticks: {
             suggestedMin: 50,
             suggestedMax: 80,
+            stepSize: 10
+          }
+        }
+      ]
+    },
+    plugins: {
+      labels: [
+        {
+          render: "value",
+          fontColor: ["red", "red", "red", "red", "red"],
+          position: "center",
+          align: "center"
+        }
+      ]
+    }
+  };
+
+  public chartData2: SingleDataSet = [20, 8, 77, 27, 5];
+  public chartLables2: Label[] = ['Atlanta', 'Canada', 'Hyderabad', 'Gurgaon', 'Pune']
+
+  public barchartColors2: Array<any> = [
+    {
+      backgroundColor: ["red", "blue", "green", "yellow", "pink"],
+      hoverBackgroundColor: ["#92c0fc", "#fff68a", "#cbffa8", "#a6fffe"],
+      borderWidth: 2
+    }
+  ];
+
+  public barChartOptions2: ChartOptions = {
+    responsive: true,
+    title: {
+      display: true,
+      text: "Locationwise Ideas",
+      fontSize:15,
+      fontColor:"green"
+    },
+    scales: {
+      yAxes: [
+        {
+          gridLines: {
+            offsetGridLines: false
+          },
+          ticks: {
+            suggestedMin: 50,
+            suggestedMax: 90,
             stepSize: 10
           }
         }
